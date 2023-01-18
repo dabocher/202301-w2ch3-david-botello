@@ -6,11 +6,9 @@ let resta = [];
 let multi = [];
 let divis = [];
 
-//función principal que nos pide que introduzcamos el valor
 const pideDato = function () {
-  //función que realiza todas las operaciones e imprime cuando ya hemos acabado de introducir datos
   const opera = function () {
-    //operamos con el método reduce
+    // Operamos con el método reduce
     suma = inputArr.reduce((accum, element) => accum + element, 0);
     console.log("El resultado de la suma es: " + suma);
     resta = inputArr.reduce(
@@ -26,12 +24,14 @@ const pideDato = function () {
     );
     console.log("El resultado de la divis es: " + divis);
   };
-  // función que nos pregunta si queremos introducir más datos
+
   const seguirOperando = function () {
+    // eslint-disable-next-line no-alert
     const seguir = confirm("¿Quieres seguir introduciendo valores?");
     if (seguir) {
       pideDato();
     } else {
+      // eslint-disable-next-line no-alert
       alert("El resultado de tu operación debería salir por consola.");
       if (inputArr.length === 1 && inputArr[0] >= 0) {
         console.log(
@@ -43,10 +43,12 @@ const pideDato = function () {
           "No es posible hacer la raiz cuadrada de un número negativo"
         );
       } else {
-        // invocamos a la función para que realice las operaciones y las imprima por consola
+        // Invocamos a la función para que realice las operaciones y las imprima por consola
         opera();
       }
-      //función que utilizamos al acabar la operación para preguntar si queremos hacer más operaciones
+
+      // Función que utilizamos al acabar la operación para preguntar si queremos hacer más operaciones
+      // eslint-disable-next-line no-alert
       const masOpera = confirm("¿Deseas realizar otra operación?");
       if (masOpera) {
         inputArr = [];
@@ -57,13 +59,16 @@ const pideDato = function () {
 
         pideDato();
       } else {
+        // eslint-disable-next-line no-alert
         return alert("Hasta pronto!");
       }
     }
   };
-  //Introducción del valor y cotejo del tipo de dato
+
+  // eslint-disable-next-line no-alert
   const input = parseFloat(prompt("Introduce un número"));
   if (Number.isNaN(input)) {
+    // eslint-disable-next-line no-alert
     alert("El valor introducido no és un número");
     pideDato();
   } else {
@@ -71,4 +76,5 @@ const pideDato = function () {
     seguirOperando();
   }
 };
+
 pideDato();
