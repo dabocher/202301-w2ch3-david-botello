@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="section.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sections</title>
+  </head>
+  <body>
+    <main>
+      <article class="container">
+        <section class="section-words-revealed">
+          <div class="container-section-words">
+            <div class="theme-text">
+              <span>Theme: </span><span class="theme" id="theme"></span>
+            </div>
+            <div class="container-list">
+              <ul class="list-results" id="list-results"></ul>
+            </div>
+          </div>
+        </section>
+        <section class="section-question">
+          <p class="question-text">Question</p>
+          <div class="container-question">
+            Con la C: <br />
+            Par de arterias que proporcionan sangre al cerebro.
+          </div>
+        </section>
+        <section class="section-answer">
+          <form id="form">
+            <label for="answer" class="answer-text"
+              >type an answer
+              <input class="answer" type="text" id="answer" value="Carótidas" />
+            </label>
+            <div class="buttons">
+              <button class="btn btn-guess" type="submit">guess</button>
+              <button class="btn btn-pass" type="submit">pass</button>
+            </div>
+          </form>
+          <div id="word-revealed" class="word-revealed"></div>
+          <!--   <div class="message red hidden">WRONG!</div> -->
+        </section>
+        <section class="section-score">
+          <div class="score-title"><span>Score</span><span>points</span></div>
+          <div class="total-score-container score-container">
+            <span>Total</span>
+            <span id="total-score" class="box-score total-score"> 0</span>
+          </div>
+          <div class="accum-score-text score-container">
+            <span>Accum</span>
+            <span id="accum-score" class="box-score accum-score"> 0 </span>
+          </div>
+          <div class="score-container">
+            <span class="next-score-text">Next answer </span
+            ><span id="next-score" class="box-score next-score"> 1 </span>
+          </div>
+        </section>
+      </article>
+    </main>
+    <script type="module" src="section.js"></script>
+  </body>
+</html>
