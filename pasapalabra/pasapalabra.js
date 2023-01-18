@@ -1,4 +1,5 @@
-/ PASABALABRA APP
+/* eslint-disable no-empty */
+/* eslint-disable no-alert */
 // VARIABLES and FUNCTIONS
 const questions1 = [
   {
@@ -329,7 +330,7 @@ const questions2 = [
 ];
 
 let userName;
-let leaderboard = [
+const leaderboard = [
   { Jugador: "Jacqueline Onassis", Puntuacion: 18 },
   { Jugador: "Hieronymus Boss", Puntuacion: 25 },
   { Jugador: "Jeff Tweedy", Puntuacion: 22 },
@@ -370,17 +371,21 @@ const updateLeaderboard = (scoreState) => {
         " puntos."
     );
   } else {
-    userName +
-      ", has conseguido una puntuación de " +
-      scoreState[0] +
-      " puntos.";
+    alert(
+      userName +
+        ", has conseguido una puntuación de " +
+        scoreState[0] +
+        " puntos."
+    );
     leaderboard.push({ Jugador: userName, Puntuacion: scoreState[0] });
   }
-  sorted = leaderboard.sort((a, b) => b.Puntuacion - a.Puntuacion);
+
+  const sorted = leaderboard.sort((a, b) => b.Puntuacion - a.Puntuacion);
   const sortedArr = ["Jugador - Puntuación"];
   for (const element of sorted) {
     sortedArr.push(`${element.Jugador} : ${element.Puntuacion} puntos.`);
   }
+
   alert(sortedArr.join(" \n"));
   return leaderboard;
 };
@@ -392,23 +397,24 @@ const normalizeInputsFx = function (input) {
   for (const elem of inputArr) {
     inputToUpperCase.push(elem[0].toUpperCase() + elem.slice(1));
   }
+
   const inputNormalized = inputToUpperCase.join(" ");
   return inputNormalized;
 };
 
-let inputFx = function (request, userName, scoreState) {
+const inputFx = function (request) {
   const input = prompt(request);
   if (input === null || input === "") {
     const inputNormalized = "";
     return inputNormalized;
-  } else {
-    const inputNormalized = normalizeInputsFx(input);
-    return inputNormalized;
   }
-};
-////////////////////////////////////////////////////
 
-//1-WELCOME & LOGIN & OPTIONS
+  const inputNormalized = normalizeInputsFx(input);
+  return inputNormalized;
+};
+/// /////////////////////////////////////////////////
+
+// 1-WELCOME & LOGIN & OPTIONS
 const wellcomeFx = () => {
   alert("Bienvenida/o al juego del Pasapalabra.");
   const userName = inputFx("Por favor, introduce tu nombre.");
@@ -435,7 +441,7 @@ const chooseThemeFx = () => {
   return questions;
 };
 
-//2-END GAME AND EXIT
+// 2-END GAME AND EXIT
 
 const endGameFx = function (questions, userName, scoreState, outOfTime) {
   if (outOfTime === true) {
@@ -465,9 +471,9 @@ const endGameFx = function (questions, userName, scoreState, outOfTime) {
     scoreState[1] = 0;
     finalFx();
   }
-  return;
 };
-//3-PLAY
+
+// 3-PLAY
 const playFx = function (questions, userName, inputFunction) {
   alert(
     "Bienvenido " +
@@ -475,13 +481,13 @@ const playFx = function (questions, userName, inputFunction) {
       "!\n \n Tienes 3 minutos para adivinar todas las palabras.\n \n La pregunta se hará en castellano, pero la respuesta puede que no esté en el idioma de Cervantes.\n  Si no sabes una palabra puedes pasar palabra con \n mn...adivina...'pasapalabra', y se te volverá a preguntar en la siguiente ronda."
   );
 
-  let timeA = new Date().getTime() / 1000;
-  let timeB = timeA + 18;
+  const timeA = new Date().getTime() / 1000;
+  const timeB = timeA + 18;
 
   let i = 0;
-  let state = questions.length;
-  let score = 0;
-  let scoreState = [score, state];
+  const state = questions.length;
+  const score = 0;
+  const scoreState = [score, state];
 
   const checkAnswerFx = function (answerUser, timeLeft, scoreState) {
     if (answerUser === questions[i].answer) {
@@ -513,7 +519,7 @@ const playFx = function (questions, userName, inputFunction) {
           " puntos."
       );
       questions[i].status = 1;
-      scoreState[1];
+      scoreState[1] = 0;
     } else {
       alert(
         answerUser +
@@ -529,6 +535,7 @@ const playFx = function (questions, userName, inputFunction) {
       questions[i].status = 0;
       scoreState[1]--;
     }
+
     return scoreState;
   };
 
@@ -543,9 +550,13 @@ const playFx = function (questions, userName, inputFunction) {
         timeLeft = 0;
         outOfTime = true;
         return endGameFx(questions, userName, scoreState, outOfTime);
-      } else if (scoreState[1] === 0) {
+      }
+
+      if (scoreState[1] === 0) {
         return endGameFx(questions, userName, scoreState);
-      } else if (questions[i].status === 0) {
+      }
+
+      if (questions[i].status === 0) {
         continue;
       } else {
         answerUser = inputFunction(questions[i].question, userName, scoreState);
@@ -559,32 +570,32 @@ const playFx = function (questions, userName, inputFunction) {
     if (timeLeft <= 0) {
       outOfTime = true;
       endGameFx(questions, userName, scoreState, outOfTime);
-      return;
     } else if (state === 0) {
       endGameFx(questions, userName, scoreState);
-      return;
     } else if (answerUser === "End") {
-      return;
     } else {
       roscoFx(timeB, scoreState);
     }
   };
+
   roscoFx(timeB, scoreState);
 };
+
 function finalFx() {
   const playAgain = confirm("¿Quieres volver a jugar?");
   if (playAgain) {
     return pasapalabraApp();
-  } else {
-    alert("Hasta pronto!");
   }
+
+  alert("Hasta pronto!");
 }
 
-//PASAPALABRA APP
+// PASAPALABRA APP
 
 const pasapalabraApp = () => {
   userName = wellcomeFx();
   const questions = chooseThemeFx();
   playFx(questions, userName, inputFx);
 };
+
 pasapalabraApp();
