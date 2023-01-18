@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Estructura pasapalabra</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <h1>PASA<span class="blue">P</span>ALABRA</h1>
+      </header>
+      <article class="container">
+        <section class="section-question">
+          <p class="question-text">Question</p>
+          <div class="container-question">
+            Con la C: <br/>
+            Par de arterias que proporcionan sangre al cerebro.
+          </div>
+        </section>
+        <section class="section-answer">
+          <form id="form">
+            <label for="answer" class="answer-text"
+              >type an answer <input class="answer" type="text" id="answer" value="Carótidas" />
+            </label>
+            <div class="buttons">
+              <button class="btn btn-guess" type="submit">guess</button>
+              <button class="btn btn-pass" type="submit">pass</button>
+            </div>
+          </form>
+          <div id="word-revealed" class="word-revealed"></div>
+        <!--   <div class="message red hidden">WRONG!</div> -->
+        </section>
+        <section class="section-score">
+          <div class="score-container">Scores
+            <div class="tg-wrap">
+              <table class="tg">
+                <tbody>
+                  <tr class="table-header">
+                    <td class="tg-score"></td>
+                    <td class="tg-correct">Correct</td>
+                    <td class="tg-pass">Pass</td>
+                    <td class="tg-wrong">Wrong</td>
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Next</td>
+                    <td id="next-points" class="tg-7n4c">1</td>
+                    <td class="tg-7n4c">0</td>
+            
+                    <td class="tg-7n4c">0</td>
+            
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Accum</td>
+                    <td id="acc--correct" class="tg-7n4c">0</td>
+                    <td id="acc--pass" class="tg-7n4c">0</td>
+                    <td class="tg-7n4c">0</td>
+            
+                  </tr>
+                  <tr>
+                    <td class="tg-0pky">Total</td>
+                    <td id="total-score" class="tg-7n4c">0</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+           
+          </div>
+        </section>
+      </article>
+      <div class="start-container ">
+        <button class="btn btn-start">START</button>
+      </div>
+      <div id="timer" class="timer"></div>
+       <div class="carrusel">
+      <div class="container-carrusel">
+        <div class="container-position">
+          <div class="box box--0 active">A</div>
+        </div>
+        <div class="container-position">
+          <div class="box box--1">B</div>
+        </div>
+        <div class="container-position">
+          <div class="box box--2">C</div>
+        </div>
+        <div class="container-position">
+          <div class="box box--3">D</div>
+        </div>
+        <div class="container-position">
+          <div class="box box--4">E</div>
+        </div>
+        <div class="container-position">
+          <div class="box box--5">F</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-G">G</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-H">H</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-I">I</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-J">J</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-K">K</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-L">L</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-M">M</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-N">N</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-O">O</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-P">P</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-Q">Q</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-R">R</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-S">S</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-T">T</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-U">U</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-V">V</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-W">W</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-X">X</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-Y">Y</div>
+        </div>
+        <div class="container-position">
+          <div class="box box-Z">Z</div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
