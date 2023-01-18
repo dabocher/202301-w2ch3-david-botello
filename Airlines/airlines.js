@@ -1,21 +1,7 @@
-Skip to content
- 
-Search…
-All gists
-Back to GitHub
-@dabocher 
-@dabocher
-dabocher/AirlinesPro.js Secret
-Last active 2 months ago
-0
-Code
-Revisions
-6
-<script src="https://gist.github.com/dabocher/f84ee84c9cec64ff1661fde1a7aecb12.js"></script>
-AirlinesPro
-AirlinesPro.js
+<script src="https://gist.github.com/dabocher/f84ee84c9cec64ff1661fde1a7aecb12.js"></script>;
+AirlinesPro;
+AirlinesPro.js;
 // AEROLINEAS PRO
-
 
 const flights = [
   { id: 00, to: "New York", from: "Barcelona", cost: 700, scale: false },
@@ -31,12 +17,10 @@ const flights = [
 ];
 let myName = "";
 
-
 const exitFx = () =>
   alert(`Gracias por su visita, ${myName}. Que tengas un feliz día.`);
 
 const aeroFlores = function () {
-
   const createFx = function () {
     if (flights.length >= 15) {
       alert(
@@ -149,7 +133,6 @@ const aeroFlores = function () {
     }
   };
 
-
   const costSearchFx = function () {
     const costSearch = prompt("Buscador de vuelos por precio", "325");
     if (costSearch === "" || Number.isNaN(+costSearch) || costSearch === null) {
@@ -203,7 +186,6 @@ const aeroFlores = function () {
     }
   };
 
-
   const lastFx = function () {
     console.log("Los destinos de los 5 últimos vuelos del día son:");
     const copyFlights = [...flights];
@@ -223,7 +205,6 @@ const aeroFlores = function () {
     lastFx();
   };
 
-
   const costArr = [];
   const averageCostFx = function (arr) {
     let averageCost = 0;
@@ -234,7 +215,6 @@ const aeroFlores = function () {
     alert(`El coste promedio de los vuelos es de ${averageCost} euros.`);
     scalesFx(flights);
   };
-
 
   const printFlightsFx = function (arr) {
     for (const elem of arr) {
@@ -248,7 +228,6 @@ const aeroFlores = function () {
     }
     averageCostFx(flights);
   };
-
 
   const bienvenidaFx = function () {
     const input = prompt("Introduce tu nombre de usuario");
@@ -265,4 +244,3 @@ const aeroFlores = function () {
   bienvenidaFx();
 };
 aeroFlores();
-
